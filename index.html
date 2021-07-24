@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
@@ -23,17 +23,26 @@
             <div class="col-12 col-md-3">
                 <div class="search-container">
                     <h3 class="container-header">Search for a city:</h3>
-                    <form>
-                        <label class="form-label" for="city-name"></label>
-                        <input name="city-name" id="city-name" type="text" autofocus="true" class="form-input" />
-                        <button class="btn2">Search</button>
+                    <form id="searchedCity">
+                        <input name="cityname" id="cityname" type="text" placeholder="Enter a city here" />
+                        <button type="submit" id="btn2 "class="btn2">Search</button>
                     </form>
                 </div>
             </div>
 
             <!-- city weather results -->
             <div class="col-12 col-xl-9">
-                <div class="results-container"> Hello </div>
+                <div class="results-container"> 
+                    <h4 id="result-city"></h4>
+                    <div id=result-city-icon></div>
+                    <div id="result-date"></div>
+                    <div id="result-weather">
+                        <div id="temp"></div>
+                        <div id="wind"></div>
+                        <div id="humid"></div>
+                        <div id="uv"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -52,7 +61,7 @@
     </div>
 
     
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
