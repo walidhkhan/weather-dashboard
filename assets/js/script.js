@@ -33,23 +33,22 @@ var formSubmitHandler = function(event) {
 }
 
 function getWeather(cityName) {
-    //fetch
+    //fetches city's temp, wind, humidity, 
     fetch(`https://api.openweathermap.org/data/2.5/weather?appid=9f4ee7678004adb88a80229c288d4e32&units=imperial&q=${cityName}`)
         .then(function (response) {
             // if(response.ok) {
             return response.json();
         }).then(function (response) {
             console.log(response);
-            // alert(`${response.weather[0].icon}`);
-            //alert(getIconClass(`${response.weather[0].icon}`));
             resultCity.textContent = `${cityName}, ${response.sys.country}`;
-            resultCityIcon.innerHTML = '<i class="wi ' + `${response.weather[0].icon}` + '"></i>';
+            resultCityIcon.innerHTML = "<img src="+`http://openweathermap.org/img/w/${response.weather[0].icon}.png`+' width="50" height="50">'
             resultDate.textContent = (moment().format("dddd, MMMM Do YYYY"));
             resultTemp.textContent = `Temperature: ${response.main.temp}°F`;
             resultWind.textContent = `Wind: ${response.wind.speed} MPH`;
             resultHumid.textContent = `Humidity: ${response.main.humidity}%`;
             let resultLon = response.coord.lon;
             let resultLat = response.coord.lat;
+            let cityIcon = `http://openweathermap.org/img/w/${response.weather[0].icon}.png`
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${resultLat}&lon=${resultLon}&&appid=9f4ee7678004adb88a80229c288d4e32`)
         .then(function (response) {
             return response.json();
