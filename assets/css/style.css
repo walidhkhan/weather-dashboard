@@ -85,13 +85,25 @@
     font-size: 20px;
 }
 
+.uv-fav {
+ background-color: limegreen;
+ border-radius: 0.3rem;
+}
+
+.uv-mod {
+    background-color: orange;
+    border-radius: 0.3rem;
+}
+
+.uv-sev {
+    background-color: red;
+    border-radius: 0.3rem;
+}
+
 /* city results block end */
 
 /* 5 day forecast start */
-.search-results {
-    border: 1px solid black;
-    padding-bottom: 30rem;
-}
+
 
 .forecast {
     

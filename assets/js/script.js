@@ -34,6 +34,8 @@ let forecastDay5Icon = document.querySelector('#forecast-day-card-5-icon');
 let forecastDay5Temp = document.querySelector('#forecast-day-card-5-temp');
 let forecastDay5Wind = document.querySelector('#forecast-day-card-5-wind');
 let forecastDay5Humid = document.querySelector('#forecast-day-card-5-humid');
+let previouslySearchedCities = document.querySelector('#previously-searched-cities');
+let searchedCitiesList = JSON.parse(localStorage.getItem("#searched-cities-list")) || [];
 
 // City search button event
 var formSubmitHandler = function(event) {
@@ -41,14 +43,60 @@ var formSubmitHandler = function(event) {
 
     var cityName = cityNameInput.value.trim();
 
-    localStorage.setItem('city name', cityName);
-
     if (cityName) {
         getWeather(cityName);
-        // fiveDayForecast(cityName);
+        saveCitySearch(cityName);
     } else {
         alert('Please enter a valid city name');
     }
+}
+
+function saveCitySearch(cityName) {
+    // let searchedCity = document.getElementById('submit').value;
+    // console.log(cityName);
+    // console.log(searchedCity);
+
+
+    let searchedCities = [];
+    if (localStorage["searched-cities-list"] != null) {
+        searchedCities = JSON.parse(localStorage["searched-cities-list"]);
+    }
+    
+    searchedCities.push(cityName);
+    localStorage.setItem("searched-cities-list", JSON.stringify(searchedCities));
+    // console.log(searchedCities);
+    searchedCities.reverse();
+    previouslySearchedCities.innerHTML = 
+    searchedCities.map(city => {
+    return `<li><a href = "javaScript:getWeather(${city})">${city}</a></li>`
+    }).join("")
+    // searchedCitiesList = JSON.parse(localStorage.getItem("#searched-cities-list")) || [];
+    // previouslySearchedCities.innerHTML = 
+    // searchedCitiesList.map(city => {
+    //     alert(city.value);
+    // return `<li class="col-12 col-md-3">${city}</li>`
+    // }).join("")
+    // searchedCities = JSON.parse(localStorage['']) || [];
+    // searchedCities.push(cityName);
+    // localStorage.setItem('cities', JSON.stringify(searchedCities));
+
+    // create city search history array
+    // let cityName = document.getElementById('cityname').value;
+    // if (localStorage.getItem('city-name') == null) {
+    //     localStorage.setItem('city-name', '[]');
+    // }
+
+    // var citySearchHistory = [];
+    // citySearchHistory = JSON.parse(localStorage.getItem('city-name')) || [];
+    // citySearchHistory.push(data);
+    // alert(citySearchHistory); 
+    // localStorage.setItem('city-name', JSON.stringify(citySearchHistory));
+
+    // citySearchHistory.push(JSON.parse(localStorage.getItem('city-name')));
+    // localStorage.setItem('city-name', JSON.stringify(cityName));
+    // citySearchHistory = JSON.parse(localStorage['city-name']);
+    // cityNameSearchHistory.push(cityName);
+    
 }
 
 function getWeather(cityName) {
@@ -80,9 +128,9 @@ function getWeather(cityName) {
             return response.json();
         }).then(function (response) {
             console.log(response);
+            uvColorSort(`${response.current.uvi}`);
             // city uv index display
             resultUv.textContent = `UV index: ${response.current.uvi}`;
-
             // 5 day forecast (day 1 of 5)
             forecastDay1.textContent = (moment().add(1,'day').format("MM/DD/YY"));
             // forcast day 1 of 5 weather status icon display
@@ -141,5 +189,33 @@ function getWeather(cityName) {
         })
 }
 
-searchedCityEl.addEventListener("submit", formSubmitHandler);
+function uvColorSort(uvIndex) {
+    if (uvIndex <= 2) {
+        resultUv.classList.add('uv-fav');
+        resultUv.classList.remove('uv-mod');
+        resultUv.classList.remove('uv-sev');
+    }
+    else if (uvIndex > 2 && uvIndex < 6 ) {
+        resultUv.classList.add('uv-mod');
+        resultUv.classList.remove('uv-fav');
+        resultUv.classList.remove('uv-sev');
+    }
+    else if (uvIndex >= 6) { 
+        resultUv.classList.add('uv-sev');
+        resultUv.classList.remove('uv-fav');
+        resultUv.classList.remove('uv-mod');
+    }
+}
 
+
+searchedCityEl.addEventListener("submit", formSubmitHandler);
+let searchedCities1 = [];
+    if (localStorage["searched-cities-list"] != null) {
+        searchedCities1 = JSON.parse(localStorage["searched-cities-list"]);
+    }
+searchedCities1.reverse();
+// console.log(searchedCities1);
+previouslySearchedCities.innerHTML = 
+searchedCities1.map(city => {
+    return `<li><a href = "javascript:getWeather('`+`${city}`+`')">${city}</a></li>`
+}).join("")
