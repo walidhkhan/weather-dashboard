@@ -37,25 +37,72 @@
                     <div id=result-city-icon></div>
                     <div id="result-date"></div>
                     <div id="result-weather">
-                        <div id="temp"></div>
-                        <div id="wind"></div>
-                        <div id="humid"></div>
-                        <div id="uv"></div>
+                        <p id="temp"></p>
+                        <p id="wind"></p>
+                        <p id="humid"></p>
+                        <p id="uv"></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 5 day forecast -->
+    
     <div class="container">
         <div class="row">
+            <!-- Previous city search list -->
             <div class="col-12 col-md-3">
                 <div class="search-results"> Cities </div>
             </div>
-        
-            <div class="col-12 col-xl-9">
-                <div class="forecast">5 day forecast</div>
+            
+            <!-- 5 day forecast -->
+            <div id="five-day" class="col-12 col-xl-9 five-day"> 5 Day Forecast
+                <div class="row forecast">
+                    <!-- day 1 of 5 -->
+                    <div class="col-md-2 forecast-header">
+                        <div id="forecast-day-card-1" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-1-icon"></div>
+                         <div id="forecast-day-card-1-temp" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-1-wind" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-1-humid" class="forecast-day-font"></div>
+                    </div>
+                    <!-- day 2 of 5 -->
+                    <div class="col-md-2 forecast-header">
+                        <div id="forecast-day-card-2" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-2-icon"></div>
+                         <div id="forecast-day-card-2-temp" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-2-wind" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-2-humid" class="forecast-day-font"></div>
+                    </div>
+                    <!-- day 3 of 5 -->
+                    <div class="col-md-2 forecast-header">
+                        <div id="forecast-day-card-3" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-3-icon"></div>
+                         <div id="forecast-day-card-3-temp" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-3-wind" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-3-humid" class="forecast-day-font"></div>
+                    </div>
+                    <!-- day 4 of 5 -->
+                    <div class="col-md-2 forecast-header">
+                        <div id="forecast-day-card-4" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-4-icon"></div>
+                         <div id="forecast-day-card-4-temp" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-4-wind" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-4-humid" class="forecast-day-font"></div>
+                    </div>
+                    <!-- day 5 of 5 -->
+                    <div class="col-md-2 forecast-header">
+                        <div id="forecast-day-card-5" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-5-icon"></div>
+                         <div id="forecast-day-card-5-temp" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-5-wind" class="forecast-day-font"></div>
+                        <div id="forecast-day-card-5-humid" class="forecast-day-font"></div>
+                    </div>
+                    <!-- <div class="col-md-2" id="forecast-day-card-2">Card 2</div>
+                    <div class="col-md-2" id="forecast-day-card-3">Card 3</div>
+                    <div class="col-md-2" id="forecast-day-card-4">Card 4</div>
+                    <div class="col-md-2" id="forecast-day-card-5">Card 5</div> -->
+                </div>
             </div>
         </div>
     </div>

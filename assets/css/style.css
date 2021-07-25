@@ -63,18 +63,28 @@
 }
 
 .btn2:hover {
-    opacity: 70%;
+    background-color:rgb(99, 161, 199);
+    box-shadow: black;
 }
 /* city search block end */
 
 /* city results block start */
 .results-container {
     font-size: 1rem;
-    font-weight: bold;
     margin-top: 5px;
     /* padding-bottom: 10rem; */
     /* border: 1px solid black; */
 }
+
+#result-date,
+#result-city {
+    font-weight: bold;
+}
+
+#result-date {
+    font-size: 20px;
+}
+
 /* city results block end */
 
 /* 5 day forecast start */
@@ -84,7 +94,20 @@
 }
 
 .forecast {
-    border: 1px solid black;
-    padding-bottom: 20rem;
+    
 }
+
+.forecast-header {
+    background-color: lightgray;
+}
+
+.forecast-day-font {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/* .forecast {
+    border: 1px solid black;
+} */
 /* 5 day forecast end */
