@@ -52,10 +52,6 @@ var formSubmitHandler = function(event) {
 }
 
 function saveCitySearch(cityName) {
-    // let searchedCity = document.getElementById('submit').value;
-    // console.log(cityName);
-    // console.log(searchedCity);
-
 
     let searchedCities = [];
     if (localStorage["searched-cities-list"] != null) {
@@ -68,7 +64,7 @@ function saveCitySearch(cityName) {
     searchedCities.reverse();
     previouslySearchedCities.innerHTML = 
     searchedCities.map(city => {
-    return `<li><a href = "javaScript:getWeather(${city})">${city}</a></li>`
+    return `<li class="previous-weather-list"><a href = "javascript:getWeather('`+`${city}`+`')">${city}</a></li>`
     }).join("")
     // searchedCitiesList = JSON.parse(localStorage.getItem("#searched-cities-list")) || [];
     // previouslySearchedCities.innerHTML = 
@@ -123,7 +119,7 @@ function getWeather(cityName) {
             let resultLon = response.coord.lon;
             let resultLat = response.coord.lat;
     // fetches uv index by using lattitude & longitude variables
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${resultLat}&lon=${resultLon}&&appid=9f4ee7678004adb88a80229c288d4e32`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${resultLat}&lon=${resultLon}&units=imperial&&appid=9f4ee7678004adb88a80229c288d4e32`)
         .then(function (response) {
             return response.json();
         }).then(function (response) {
@@ -217,5 +213,5 @@ searchedCities1.reverse();
 // console.log(searchedCities1);
 previouslySearchedCities.innerHTML = 
 searchedCities1.map(city => {
-    return `<li><a href = "javascript:getWeather('`+`${city}`+`')">${city}</a></li>`
+    return `<li class="previous-weather-list"><a href = "javascript:getWeather('`+`${city}`+`')">${city}</a></li>`
 }).join("")

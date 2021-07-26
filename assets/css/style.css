@@ -99,14 +99,15 @@
     background-color: red;
     border-radius: 0.3rem;
 }
-
 /* city results block end */
 
 /* 5 day forecast start */
-
+#five-day {
+    font-weight: bold;
+}
 
 .forecast {
-    
+    justify-content: space-between;
 }
 
 .forecast-header {
@@ -115,11 +116,30 @@
 
 .forecast-day-font {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
+}
+/* 5 day forecast end */
+
+/* Previously searched weather list start */
+.previous-weather-list, a {
+    list-style-type: none;
+    /* font-weight: bold; */
+    align-content: center;
+    color: white;
+    text-decoration: inherit;
+    width: 100%;
+    /* border: 1px solid lightskyblue;
+    border-radius: 0.3rem; */
 }
 
+a {
+    background-color: rgb(136, 129, 129);
+    border: 2px solid black;
+    border-radius: 0.3rem;
+}
 
-/* .forecast {
-    border: 1px solid black;
-} */
-/* 5 day forecast end */
+a:hover {
+    text-decoration: inherit;
+    background-color: lightgrey;
+}
+/* Previously searched weather list end*/
