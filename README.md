@@ -1,6 +1,6 @@
 # Weather-dashboard
 
-<img src="https://i.ibb.co/wcWg0cV/Weather-Dashboard.gif"/>
+<img src="./assets/pics/app-screenshot.png"/>
 
 ## Table of Contents
 - [Description](#Description)
