@@ -1,5 +1,18 @@
 # Weather-dashboard
-This is a weather-dashboard which uses the openweather api and does the following:
+
+<img src="https://i.ibb.co/wcWg0cV/Weather-Dashboard.gif"/>
+
+## Table of Contents
+- [Description](#Description)
+- [Instructions](#Instructions)
+- [License](#License)
+- [Questions](#Questions)
+
+
+<div id='Desciption'/>
+
+## Description
+This is a Weather application which uses the OpenWeather One Call API and does the following:
 - Allows the user to search for a city's weather
 - Displays user's searched city's:
     1. Current weather status by icon.
@@ -7,10 +20,42 @@ This is a weather-dashboard which uses the openweather api and does the followin
     3. Current temperature (in fahrenheit).
     4. Current wind (in MPH).
     5. Current Humidity percentage.
-    6. Current uv index and uv index condition via scale (favorable = green, moderate = orange, and severe = red)
+    6. Current UV index and UV index condition via scale (favorable = green, moderate = orange, and severe = red)
     7. 5 day forecast with respective additional icon, temperature, wind, and humidity values
 - Lists all previously searched cities via hyerlink using local storage
 
-<img src="./assets/pics/app-screenshot.png" />
+<div id='Instructions'/>
 
- https://walidhkhan.github.io/weather-dashboard/
+## Instructions
+Please visit https://walidhkhan.github.io/weather-dashboard/ in order to use this application.
+
+<div id='License'/>
+
+## License       
+ISC  
+![license](https://img.shields.io/badge/license-ISC-green.svg)
+
+<div id='Questions'/>
+
+## Questions
+For additional questions or concerns regarding this project, please contact the information below:
+
+**Contact information**  
+GitHub: https://github.com/walidhkhan  
+Email: walidhkhan@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
