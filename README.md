@@ -1,4 +1,4 @@
-# Weather-dashboard
+# Weather-Dashboard
 
 <img src="./assets/pics/app-screenshot.png"/>
 
